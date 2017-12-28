@@ -1,0 +1,35 @@
+{
+  "name": "speech-apis-comparison",
+  "version": "1.0.0",
+  "description": "Compares different speech apis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammar-hasan/speech-apis-comparison.git"
+  },
+  "keywords": [
+    "speech",
+    "text",
+    "watson",
+    "azure",
+    "cognitive",
+    "cloud"
+  ],
+  "author": "Ammar Hasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ammar-hasan/speech-apis-comparison/issues"
+  },
+  "homepage": "https://github.com/ammar-hasan/speech-apis-comparison#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cross-env": "^5.1.3",
+    "express": "^4.16.2",
+    "microsoft-speech-browser-sdk": "0.0.11",
+    "watson-developer-cloud": "^3.0.3"
+  }
+}
