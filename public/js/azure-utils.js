@@ -44,7 +44,8 @@ window.ns.utils.azure = (function () {
 	            	}
 	            	return new SDK.CognitiveTokenAuthentication(cb, cb)
 	            },
-	            auth = authMaker()
+	            auth = authMaker(),
+	            transcript = []
 
 	        SDK.CreateRecognizerWithFileAudioSource(recognizerConfig, auth, file).Recognize((event) => {
                	if (event.Name === "SpeechHypothesisEvent") {
@@ -52,6 +53,10 @@ window.ns.utils.azure = (function () {
                	} else if (event.Name === "SpeechFragmentEvent") {
                		var val = $(outputEl).html();
                		$(outputEl).html(val + " " + event.Result.Text)
+               	} else if (event.Name === "SpeechDetailedPhraseEvent" && event.Result.NBest.length > 0) {
+               		transcript.push(event.Result.NBest[0].Display)
+               	} else if (event.Name === "RecognitionEndedEvent") {
+               		$(outputEl).html(transcript.join(' '))
                	}
             })
             .On(

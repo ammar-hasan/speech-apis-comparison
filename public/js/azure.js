@@ -21,6 +21,7 @@ window.ns.modules.azure = (function(el) {
 				if (!this.file) {
 					return alert("Please select an audio file.")
 				}
+				$("#txtAzureTranscript").html('');
 				window.ns.utils.azure.uploadFile(this.file, "#txtAzureTranscript")
 			}
 		}

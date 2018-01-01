@@ -21,6 +21,7 @@ window.ns.modules.watson = (function(el) {
 				if (!this.file) {
 					return alert("Please select an audio file.")
 				}
+				$("#txtWatsonTranscript").html('');
 				window.ns.utils.watson.uploadFile(this.file, "#txtWatsonTranscript")
 			}
 		}
